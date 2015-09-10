@@ -69,4 +69,20 @@ public class ParserTest {
 
         assertEquals(10, taxPercentage, 0.01);
     }
+
+    @Test
+    public void shouldReturnFivePercentageImportDutyForImportedItems() {
+        Parser parser = new Parser("1 imported bottle of perfume at 47.50");
+        double importDuty = parser.getImportDuty("1 imported bottle of perfume ");
+
+        assertEquals(5, importDuty, 0.01);
+    }
+
+    @Test
+    public void shouldReturnZeroPercentageImportDutyForNonImportedItems() {
+        Parser parser = new Parser("1 bottle of perfume at 47.50");
+        double importDuty = parser.getImportDuty("1 bottle of perfume ");
+
+        assertEquals(0, importDuty, 0.01);
+    }
 }

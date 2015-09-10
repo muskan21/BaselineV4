@@ -36,4 +36,11 @@ public class Parser {
         else
             return 10;
     }
+
+    public double getImportDuty(String itemNAme) {
+        if(itemNAme.toLowerCase().contains("imported"))
+            return 5;
+        else
+            return 0;
+    }
 }
