@@ -14,6 +14,9 @@ public class Item {
     }
 
     public double calculateSalesTax() {
-        return 0;
+        double salesTax = 0;
+        if(importDuty != 0)
+            salesTax = (itemPrice * importDuty) / 100;
+        return salesTax;
     }
 }

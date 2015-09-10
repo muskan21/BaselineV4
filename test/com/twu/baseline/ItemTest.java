@@ -12,4 +12,12 @@ public class ItemTest {
 
         assertEquals(0, salesTax, 0.01);
     }
+
+    @Test
+    public void shouldReturn5PercentSalesTaxForImportedNonExemptedItems() {
+        Item item = new Item("1 imported bottle of perfume ", 47.50, 0, 5);
+        double salesTax = item.calculateSalesTax();
+
+        assertEquals(2.375, salesTax, 0.01);
+    }
 }
