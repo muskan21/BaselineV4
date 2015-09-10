@@ -45,7 +45,9 @@ public class Parser {
     }
 
     public Item parse() {
-        Item item = new Item(itemName(tokenise()), itemPrice(tokenise()), getTaxPercentage(itemName(tokenise())), getImportDuty(itemName(tokenise())));
+        String[] inputTokens = tokenise();
+        String name = itemName(inputTokens);
+        Item item = new Item(name, itemPrice(inputTokens), getTaxPercentage(name), getImportDuty(name));
         return item;
     }
 }
