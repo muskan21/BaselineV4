@@ -17,4 +17,8 @@ public class Parser {
             itemname = itemname + inputTokens[count] + " ";
         return itemname;
     }
+
+    public double itemPrice(String[] inputTokens) {
+        return Double.parseDouble(inputTokens[inputTokens.length - 1]);
+    }
 }
