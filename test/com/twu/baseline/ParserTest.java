@@ -29,4 +29,12 @@ public class ParserTest {
 
         assertEquals(12.49, itemprice, 0.01);
     }
+
+    @Test
+    public void shouldReturnNanIfLastTokenIsNotPrice() {
+        Parser parser = new Parser("1 box of chocolates");
+        double itemprice = parser.itemPrice(new String[]{"1", "box", "of", "chocolates"});
+
+        assertEquals(Double.NaN, itemprice, 0.01);
+    }
 }

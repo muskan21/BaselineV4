@@ -19,6 +19,14 @@ public class Parser {
     }
 
     public double itemPrice(String[] inputTokens) {
-        return Double.parseDouble(inputTokens[inputTokens.length - 1]);
+        double price = Double.NaN;
+        try {
+            price = Double.parseDouble(inputTokens[inputTokens.length - 1]);
+        }
+        catch (NumberFormatException e) {
+        }
+        finally {
+            return price;
+        }
     }
 }
