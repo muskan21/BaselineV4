@@ -29,4 +29,8 @@ public class Parser {
             return price;
         }
     }
+
+    public double getTaxPercentage(String itemName) {
+        return 0;
+    }
 }

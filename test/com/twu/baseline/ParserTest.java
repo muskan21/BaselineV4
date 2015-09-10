@@ -37,4 +37,28 @@ public class ParserTest {
 
         assertEquals(Double.NaN, itemprice, 0.01);
     }
+
+    @Test
+    public void shouldReturnZeroTaxPercentageForBookItems() {
+        Parser parser = new Parser("1 book at 12.49");
+        double taxPercentage = parser.getTaxPercentage("1 book ");
+
+        assertEquals(0, taxPercentage, 0.01);
+    }
+
+    @Test
+    public void shouldReturnZeroTaxPercentageForFoodItems() {
+        Parser parser = new Parser("1 box of chocolates at 12.49");
+        double taxPercentage = parser.getTaxPercentage("1 box of chocolates ");
+
+        assertEquals(0, taxPercentage, 0.01);
+    }
+
+    @Test
+    public void shouldReturnZeroTaxPercentageForHealthItems() {
+        Parser parser = new Parser("1 packet of health pills at 9.75");
+        double taxPercentage = parser.getTaxPercentage("1 packet of health pills ");
+
+        assertEquals(0, taxPercentage, 0.01);
+    }
 }
