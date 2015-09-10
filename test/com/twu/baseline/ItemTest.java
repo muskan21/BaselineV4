@@ -7,25 +7,33 @@ import static org.junit.Assert.assertEquals;
 public class ItemTest {
     @Test
     public void shouldReturnZeroSalesTaxForNonImportedNonExemptedItems() {
-        Item item = new Item("1 bottle of perfume ", 47.50, 0, 0);
+        Item item = new Item("1 box of chocolates ", 47.50, 0, 0);
         double salesTax = item.calculateSalesTax();
 
         assertEquals(0, salesTax, 0.01);
     }
 
     @Test
-    public void shouldReturn5PercentSalesTaxForImportedNonExemptedItems() {
-        Item item = new Item("1 imported bottle of perfume ", 47.50, 0, 5);
+    public void shouldReturn5PercentSalesTaxForImportedExemptedItems() {
+        Item item = new Item("1 imported box of chocolates ", 47.50, 0, 5);
         double salesTax = item.calculateSalesTax();
 
         assertEquals(2.375, salesTax, 0.01);
     }
 
     @Test
-    public void shouldReturnTenPercentSalesTaxForNonImportedExemptedItems() {
-        Item item = new Item("1 chocolate bar ", 0.85, 10, 0);
+    public void shouldReturnTenPercentSalesTaxForNonImportedNonExemptedItems() {
+        Item item = new Item("1 bottle of perfume ", 0.85, 10, 0);
         double salesTax = item.calculateSalesTax();
 
         assertEquals(0.085, salesTax, 0.01);
+    }
+
+    @Test
+    public void shouldReturnFifteenPercentSalesTaxForImportedNonExemptedItems() {
+        Item item = new Item("1 imported bottle of perfume ", 27.99, 10, 5);
+        double salesTax = item.calculateSalesTax();
+
+        assertEquals(4.1985, salesTax, 0.01);
     }
 }

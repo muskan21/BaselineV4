@@ -17,8 +17,8 @@ public class Item {
         double salesTax = 0;
         if(importDuty != 0)
             salesTax = (itemPrice * importDuty) / 100;
-        else if(taxPercentage != 0)
-            salesTax = (itemPrice * taxPercentage) / 100;
+        if(taxPercentage != 0)
+            salesTax = salesTax + ((itemPrice * taxPercentage) / 100);
         return salesTax;
     }
 }
