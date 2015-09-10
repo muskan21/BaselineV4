@@ -43,4 +43,9 @@ public class Parser {
         else
             return 0;
     }
+
+    public Item parse() {
+        Item item = new Item(itemName(tokenise()), itemPrice(tokenise()), getTaxPercentage(itemName(tokenise())), getImportDuty(itemName(tokenise())));
+        return item;
+    }
 }

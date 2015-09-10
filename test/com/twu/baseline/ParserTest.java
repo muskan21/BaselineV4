@@ -85,4 +85,12 @@ public class ParserTest {
 
         assertEquals(0, importDuty, 0.01);
     }
+
+    @Test
+    public void shouldParseInputToReturnItemObject() {
+        Parser parser = new Parser("1 bottle of perfume at 47.50");
+        Item item = parser.parse();
+
+        assertEquals(Item.class, item.getClass());
+    }
 }
