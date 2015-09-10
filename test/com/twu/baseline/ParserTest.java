@@ -61,4 +61,12 @@ public class ParserTest {
 
         assertEquals(0, taxPercentage, 0.01);
     }
+
+    @Test
+    public void shouldReturnTenTaxPercentageForAnyOtherItem() {
+        Parser parser = new Parser("1 imported bottle of perfume at 47.50");
+        double taxPercentage = parser.getTaxPercentage("1 imported bottle of perfume ");
+
+        assertEquals(10, taxPercentage, 0.01);
+    }
 }

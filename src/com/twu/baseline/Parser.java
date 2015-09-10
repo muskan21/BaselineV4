@@ -31,6 +31,9 @@ public class Parser {
     }
 
     public double getTaxPercentage(String itemName) {
-        return 0;
+        if(itemName.toLowerCase().contains("book") || itemName.toLowerCase().contains("pills") || itemName.toLowerCase().contains("chocolate"))
+            return 0;
+        else
+            return 10;
     }
 }
