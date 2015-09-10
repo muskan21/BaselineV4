@@ -10,4 +10,11 @@ public class Parser {
     public String[] tokenise() {
         return input.split(" ");
     }
+
+    public String itemName(String[] inputTokens) {
+        String itemname = "";
+        for(int count = 0; count < inputTokens.length - 2; count++)
+            itemname = itemname + inputTokens[count] + " ";
+        return itemname;
+    }
 }

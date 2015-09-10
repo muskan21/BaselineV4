@@ -13,4 +13,12 @@ public class ParserTest {
 
         assertArrayEquals(new String[]{"1", "box", "of", "chocolates", "at", "12.49"}, inputTokens);
     }
+
+    @Test
+    public void shouldReturnAppropriateSetTokensToGiveItemNAme() {
+        Parser parser = new Parser("1 box of chocolates at 12.49");
+        String itemName = parser.itemName(new String[]{"1", "box", "of", "chocolates", "at", "12.49"});
+
+        assertEquals("1 box of chocolates ", itemName);
+    }
 }
