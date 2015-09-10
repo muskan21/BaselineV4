@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ItemTest {
     @Test
-    public void shouldReturnZeroSalesTaxForNonImportedNonExemptedItems() {
+    public void shouldReturnZeroSalesTaxForNonImportedExemptedItems() {
         Item item = new Item("1 box of chocolates ", 47.50, 0, 0);
         double salesTax = item.calculateSalesTax();
 
