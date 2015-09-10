@@ -1,3 +1,5 @@
+package com.twu.baseline;
+
 import java.util.Scanner;
 
 public class BaselineApplication {

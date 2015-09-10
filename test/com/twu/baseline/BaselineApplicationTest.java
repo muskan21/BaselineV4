@@ -1,5 +1,6 @@
-import org.junit.Test;
+package com.twu.baseline;
 
+import org.junit.Test;
 import java.io.ByteArrayInputStream;
 
 import static org.junit.Assert.assertEquals;
