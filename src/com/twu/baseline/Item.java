@@ -12,4 +12,8 @@ public class Item {
         this.taxPercentage = taxPercentage;
         this.importDuty = importDuty;
     }
+
+    public double calculateSalesTax() {
+        return 0;
+    }
 }
